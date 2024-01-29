@@ -32,3 +32,5 @@ Route::view('notes/create', 'notes.create')
     ->name('notes.create');
 
 require __DIR__.'/auth.php';
+
+// Yo?
