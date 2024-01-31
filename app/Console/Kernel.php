@@ -12,7 +12,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('app:send-scheduled-notes')
+            ->timezone('Sweden/Stockholm')
+            ->dailyAt('07:00')
+            ->appendOutputTo(storage_path('logs/send-scheduled-notes.log'));
     }
 
     /**

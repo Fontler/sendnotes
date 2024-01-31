@@ -6,6 +6,8 @@ use App\Models\Note;
 new class extends Component {
     public Note $note;
     public $heartCount;
+    public $buttonClicked = false;
+
 
     public function mount(Note $note)
     {
