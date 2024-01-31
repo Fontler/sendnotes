@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('app:send-scheduled-notes')
             ->timezone('Sweden/Stockholm')
-            ->dailyAt('07:00')
+            ->dailyAt('08:00')
             ->appendOutputTo(storage_path('logs/send-scheduled-notes.log'));
     }
 
