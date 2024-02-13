@@ -1,0 +1,22 @@
+name: deploy
+
+on:
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        name: Deploy to Hertzner
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  key: ${{ secrets.KEY }}
+                  port: ${{ secrets.PORT }}
+                  script: |
+                      cd /var/www/sendnotes
+                      git pull origin main
+                      npm install
+                      npm run build

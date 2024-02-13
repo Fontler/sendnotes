@@ -13,8 +13,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command('app:send-scheduled-notes')
-            ->timezone('Sweden/Stockholm')
-            ->dailyAt('08:00')
+            ->timezone('Europe/Stockholm')
+            ->dailyAt('01:00')
             ->appendOutputTo(storage_path('logs/send-scheduled-notes.log'));
     }
 
