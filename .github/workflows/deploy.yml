@@ -1,7 +1,9 @@
 name: deploy
 
 on:
-    workflow_dispatch:
+    push:
+      branches:
+        - main
 
 jobs:
     deploy:
@@ -17,6 +19,5 @@ jobs:
                   port: ${{ secrets.PORT }}
                   script: |
                       cd /var/www/sendnotes
-                      whoami
                       git stash
                       git pull origin main
