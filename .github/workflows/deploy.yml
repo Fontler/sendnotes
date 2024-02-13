@@ -17,6 +17,7 @@ jobs:
                   port: ${{ secrets.PORT }}
                   script: |
                       cd /var/www/sendnotes
+                      git stash
                       git pull origin main
                       npm install
                       npm run build
